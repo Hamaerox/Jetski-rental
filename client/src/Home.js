@@ -25,6 +25,10 @@ class Home extends Component {
 
     handleChange = (e) => {
         e.preventDefault()
+        const {name, value} = e.target
+        this.setState({
+            [name]: value
+        })
 
     }
 
@@ -32,38 +36,38 @@ class Home extends Component {
         return(
             <div>
                 <div className='bookingContainer'>
-                <form onSubmit={this.handleSubmit}>
-                    <input type='date' 
-                           name='date'
-                           value={this.state.date} 
-                           onChange={this.handleChange}/>
-                           <br></br>
-                    <select name='time'
+                    <form onSubmit={this.handleSubmit}>
+                        <input 
+                            type='date' 
+                            name='date'
+                            value={this.state.date} 
+                            onChange={this.handleChange}/>
+                        <select 
+                            name='time'
                             value={this.state.time}
                             onChange={this.handleChange}>
-                        <option>Choose a Time</option>
-                        {data.time.map(time => <option key={time} value={time}>{time}</option>)}
-                    </select>
-                           <br></br>
-                    <input type='text'
-                           name='name'
-                           placeholder='Name of Renter'
-                           value={this.state.name}
-                           onChange={this.handleChange}/>
-                           <br></br>
-                    <input type='email'
-                           name='email'
-                           placeholder='Your Email Address'
-                           value={this.state.email}
-                           onChange={this.handleChange}/>
-                           <br></br>
-                    <input type='number'
-                           name='number'
-                           placeholder='Contact Number'
-                           value={this.state.number}
-                           onChange={this.handleChange}/>
-                           <br></br>
-                    <button>Book my Adventure!</button>
+                            <option>Choose a Time</option>
+                            {data.time.map(time => <option key={time} value={time}>{time}</option>)}
+                        </select>
+                        <input 
+                            type='text'
+                            name='name'
+                            placeholder='Name of Renter'
+                            value={this.state.name}
+                            onChange={this.handleChange}/>
+                        <input 
+                            type='email'
+                            name='email'
+                            placeholder='Your Email Address'
+                            value={this.state.email}
+                            onChange={this.handleChange}/>
+                        <input 
+                            type='number'
+                            name='number'
+                            placeholder='Contact Number'
+                            value={this.state.number}
+                            onChange={this.handleChange}/>
+                        <button>Book my Adventure!</button>
                     </form>
                 </div>
             </div>
