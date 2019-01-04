@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './styles.css'
+import Home from './Home'
 
 class App extends Component{
     constructor(){
@@ -12,7 +13,7 @@ class App extends Component{
     render(){
         return(
             <div>
-
+                <Home/>
             </div>
         )
     }
