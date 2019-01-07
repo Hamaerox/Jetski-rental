@@ -6,6 +6,106 @@ html {
     background-attachment: fixed
 }
 
-.bookingContainer {
-
+.menu,
+.menu.open {
+  cursor: pointer;
+  position: fixed;
+  top: 5%;
+  z-index: 4;
+  background: rgb(216, 126, 45);
+  padding: 10px;
+  border-radius: 5px;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 1.0); */
+  width: 14px;
+  height: 15px;
+  animation: myanimation 1s;
 }
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 15px;
+  height: 3px;
+  background-color: rgb(8, 47, 41);
+  margin-bottom: 4px;
+  transition: 0.8s;
+}
+
+.menu.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.menu.open .bar2 {
+  opacity: 0;
+}
+
+.menu.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -6px);
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.popup-overlay {
+    width: 10%;
+    height: 100%;
+    background-color: rgb(8, 47, 41) !important;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 5px;
+    animation: fade 2s;
+    opacity: 0.9;
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 0.9;}
+}
+
+.popup-content {
+    box-shadow: none !important;
+}
+
+.navColor {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-family: monospace;
+    margin-left: 10%;
+  }
+
+  a {
+    color: rgb(216, 126, 45);
+    opacity: 1;
+    z-index: 4;
+    text-decoration: none;
+    font-size: xx-large;
+    margin-left: 5px;
+    animation: fade 2s;
+    margin-bottom: 10%;
+  }
+
+.bookingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(8, 47, 41);
+    height: 500px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 60%;
+    margin-top: 7%;
+    opacity: 0.8;
+    border: 4px solid rgb(216, 126, 45)
+}
+
+.bookingForm {
+    margin-bottom: 5px;
+    color: rgb(216, 126, 45);
+    border-radius: 10px;
+}
+
+.bookingInput {
+    border-radius: 5px;
+}
+
