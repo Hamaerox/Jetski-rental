@@ -4,7 +4,6 @@ const mongoose = require('mongoose')
 const app = express()
 const PORT = process.env.PORT || 8000
 
-
 app.use(express.json()) 
 app.use(morgan('dev'))  
 

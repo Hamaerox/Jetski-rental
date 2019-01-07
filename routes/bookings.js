@@ -30,7 +30,7 @@ bookingsRouter.delete('/', (req, res, next) => {
 
 
 bookingsRouter.post('/', (req, res) => {   //for testing with postman
-    
+    console.log('hit server')
     const newBooking = new Booking(req.body)
     
     newBooking.save((err, booking) => {
