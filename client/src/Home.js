@@ -52,11 +52,7 @@ class Home extends Component {
                             name='time'
                             value={this.state.time}
                             onChange={this.handleChange}>
-<<<<<<< HEAD
                             <option value=''>Choose a Time</option>
-=======
-                            <option value = ''>Choose a Time</option>
->>>>>>> master
                             {data.time.map(time => <option key={time} value={time}>{time}</option>)}
                         </select>
                         <h4 className='formText'>Please enter your name:</h4>

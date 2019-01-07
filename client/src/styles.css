@@ -48,12 +48,11 @@ html {
 .popup-overlay {
     width: 10%;
     height: 100%;
-    background-color: rgb(8, 47, 41) !important;
+    /* background-color: rgb(8, 47, 41) !important;
     padding: 2px;
     margin: 2px;
     border-radius: 5px;
-    animation: fade 2s;
-    opacity: 0.9;
+    animation: fade 2s; */
 }
 
 @keyframes fade {
@@ -63,11 +62,15 @@ html {
 
 .popup-content {
     box-shadow: none !important;
+    background-color: rgb(8, 47, 41) !important;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 5px;
+    animation: fade 2s;
 }
 
 .navColor {
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
     font-family: monospace;
     margin-left: 10%;
@@ -80,8 +83,7 @@ html {
     text-decoration: none;
     font-size: xx-large;
     margin-left: 5px;
-    animation: fade 2s;
-    margin-bottom: 10%;
+    margin-bottom: 50%;
   }
 
 .bookingContainer {
