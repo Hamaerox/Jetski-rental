@@ -16,8 +16,13 @@ class App extends Component{
             textAlign: 'center'
         }
         const contentStyle = {
-            background: 'rgba(255,255,255,0',
-            width: '80%',
+            // background: 'rgba(255,255,255,0',
+            width: '10%',
+            height: '100%',
+            margin: '2px',
+            padding: '2px',
+            marginLeft: '2%',
+            opacity: '0.9',
             border: 'none'
         }
 
@@ -25,7 +30,7 @@ class App extends Component{
             <div>
                 <div style={styles}>
                     <Popup
-                        modaloverlayStyle={{background: 'rgba(255,255,255,0.98'}}
+                        // modaloverlayStyle={{background: 'rgba(255,255,255,0.98'}}
                         contentStyle={contentStyle}
                         closeOnDocumentClick={false}
                         trigger={open => <Menubar open={open}/>}
