@@ -46,15 +46,15 @@ bookingsRouter.post('/', (req, res) => {   //for testing with postman
 
 // check if the user is in the database and the time and date requested is availabale 
 
-bookingsRouter.post('/:email', (req, res, next) => {
-    Booking.findOne({email: req.params.email}, (err, booking) => {
+bookingsRouter.post('/:date', (req, res, next) => {
+    Booking.findOne({date: req.params.date, time: req.body.time}, (err, booking) => {
         if (err) {
             res.status(500)
             return next(err)
         }
             
         if(booking){ 
-            return res.status(200).send(booking)
+            return res.status(200).send(" fail")
 
         } else {
             
@@ -64,7 +64,7 @@ bookingsRouter.post('/:email', (req, res, next) => {
                     res.status(500)
                     return next(err)
                 }
-                return res.status(201).send(booking)
+                return res.status(201).send(" pass ")
             })
         }
     })
