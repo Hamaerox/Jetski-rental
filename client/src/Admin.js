@@ -21,7 +21,7 @@ handleChange(e){
 
 handleSubmit(){
     const {username, password} = this.state
-    Axios.post('/auth', username, password).then(res => {
+    Axios.post('/auth/login', username, password).then(res => {
         console.log(res)
     })
 }
