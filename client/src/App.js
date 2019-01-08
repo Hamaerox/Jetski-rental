@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './styles.css'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import Home from './Home'
 import Menubar from './Menubar'
 import Navbar from './Navbar'
@@ -8,6 +8,9 @@ import Popup from 'reactjs-popup'
 import About from './About'
 import Contact from './Contact'
 import Admin from './Admin'
+import Bookings from './Bookings'
+import ProtectedRoute from './ProtectedRoute';
+import {withAdmin} from './AdminProvider'
 
 class App extends Component{
     render(){
@@ -26,6 +29,8 @@ class App extends Component{
             border: 'none'
         }
 
+        const {token} = this.props
+        console.log(this.props)
         return(
             <div>
                 <div style={styles}>
@@ -40,13 +45,19 @@ class App extends Component{
                 </div>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route path='/about' component={About}/>
+                    <Route exact path='/about' component={About}/>
                     <Route path='/contact' component={Contact}/>
-                    <Route path='/admin' component={Admin}/>
+                    <Route exact path='/admin' render={props => token ? <Redirect to='/bookings'/> : <Admin {...props}/>}/>
+                    <ProtectedRoute 
+                        redirectTo='/admin'
+                        component={Bookings}
+                        token={token}
+                        path='/bookings'
+                    />
                 </Switch>
             </div>
         )
     }
 }
 
-export default App
+export default withAdmin(App)
