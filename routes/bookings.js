@@ -29,6 +29,19 @@ bookingsRouter.delete('/', (req, res, next) => {
 })
 
 
+bookingsRouter.delete('/:id', (req, res, next) => {  //delete one by ID for admin use only
+     
+    Booking.findOneAndDelete({_id: req.params.id} , (err, data) => {
+        if (err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(202).send('booking deleted')
+    })
+})
+
+
+
 bookingsRouter.post('/', (req, res) => {   //for testing with postman
     
     const newBooking = new Booking(req.body)
