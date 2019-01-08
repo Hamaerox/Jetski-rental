@@ -17,7 +17,7 @@ const adminSchema = new Schema({
 })
     // Encrypts password on Signup
 
-/*adminSchema.pre("save", function(next) {
+adminSchema.pre("save", function(next) {
     const user = this
     if (!user.isModified("password")) return next()
     bcrypt.hash(user.password, 10, (err, hash) => {
@@ -40,7 +40,7 @@ adminSchema.methods.withoutPassword = function(){
     const user = this.toObject()
     delete user.password
     return user
-} */
+} 
 
 
     
