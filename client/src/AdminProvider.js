@@ -7,7 +7,7 @@ class AdminProvider extends Component{
     constructor(){
         super()
         this.state = {
-            token: '',
+            token: localStorage.getItem('token') || '',
             username: '',
             password: ''
         }
@@ -15,7 +15,11 @@ class AdminProvider extends Component{
 
     signin = userInfo => {
         Axios.post('/auth/login', userInfo).then(res => {
+            const {token, admin} = res.data
+            localStorage.setItem('user', JSON.stringify(admin))
+            localStorage.setItem('token', token)
             this.setState({
+                user: admin, token,
                 token: res.data.token
             })
         })

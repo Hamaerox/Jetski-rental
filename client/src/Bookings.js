@@ -46,7 +46,7 @@ class Bookings extends Component {
                             <br></br>
                             {`Email: ${item.email}`}
                             <br></br>
-                            <button onClick={this.handleDelete}>Delete</button>
+                            <button onClick={ () => this.handleDelete(item._id)}>Delete</button>
                         </div>
                     )}
                 </div>
