@@ -16,6 +16,7 @@ class BookingsProvider extends Component{
             this.setState({
                 reservations: res.data
             })
+            console.log(res.data)
         })
         .catch(err => console.log(err))
     }
