@@ -19,7 +19,7 @@ class Home extends Component {
         e.preventDefault()
         const {date, time, name, email, phone} = this.state
         axios.post('/bookings', {date, time, name, email, phone}).then(res => {
-            alert(res.data)
+            alert('Your booking was submitted successfully')
         })
     }
 

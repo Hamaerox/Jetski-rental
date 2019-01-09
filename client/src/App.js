@@ -19,7 +19,6 @@ class App extends Component{
             textAlign: 'center'
         }
         const contentStyle = {
-            // background: 'rgba(255,255,255,0',
             width: '10%',
             height: '100%',
             margin: '2px',
@@ -30,12 +29,10 @@ class App extends Component{
         }
 
         const {token} = this.props
-        console.log(this.props)
         return(
             <div>
                 <div style={styles}>
                     <Popup
-                        // modaloverlayStyle={{background: 'rgba(255,255,255,0.98'}}
                         contentStyle={contentStyle}
                         closeOnDocumentClick={false}
                         trigger={open => <Menubar open={open}/>}

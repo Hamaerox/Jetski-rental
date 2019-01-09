@@ -2,14 +2,16 @@ import React, {Component} from 'react'
 import {withReservations} from './BookingsProvider'
 import moment from 'moment'
 import './styles.css'
+import {withAdmin} from './AdminProvider'
+import Axios from 'axios';
 
 
 
 class Bookings extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            
+            reservations: []
         }
     }
 
@@ -17,23 +19,41 @@ class Bookings extends Component {
         this.props.getBookings()
     }
 
+    handleDelete = (id) => {
+        Axios.delete(`/bookings/${id}`).then(res => {
+            this.setState(prevState => {
+                return{
+                    reservations: prevState.reservations.filter(reservation => reservation._id !== id)
+                }
+            })
+        })
+    }
 
     render(){
         const reservations = this.props.reservations
         return(
-            <div className='reservations'>
+            <div>
             <h1>Bookings: </h1>
                 <div>{reservations.map(item => 
-                        <h1>
-                            {`Name: ${item.name.toUpperCase()}, 
-                            Date: ${moment(item.date).format("MMM Do YY")}, 
-                            Time: ${item.time}, 
-                            Phone: ${item.phone}, 
-                            Email: ${item.email}`}</h1>)}
+                        <div className='reservations'>
+                            {`Name: ${item.name.toUpperCase()}`}
+                            <br></br>
+                            {`Date: ${moment(item.date).format("MMM Do YY")}`} 
+                            <br></br>
+                            {`Time: ${item.time}`} 
+                            <br></br>
+                            {`Phone: ${item.phone}`}
+                            <br></br>
+                            {`Email: ${item.email}`}
+                            <br></br>
+                            <button onClick={this.handleDelete}>Delete</button>
+                        </div>
+                    )}
                 </div>
+                <button onClick={this.props.logout}>Logout</button>
             </div>
         )
     }
 }
 
-export default withReservations(Bookings)
+export default withAdmin(withReservations(Bookings))

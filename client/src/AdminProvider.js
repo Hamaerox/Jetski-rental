@@ -22,11 +22,21 @@ class AdminProvider extends Component{
         .catch(err => console.log(err))
     }
 
+    logout = () => {
+        this.setState({
+            user: '',
+            token: ''
+        })
+        localStorage.removeItem('user')
+        localStorage.removeItem('token')
+    }
+
     render(){
         return(
                 <TestContext.Provider value={{
                     signin: this.signin,
-                    token: this.state.token
+                    token: this.state.token,
+                    logout: this.logout
                 }}>
                 {this.props.children}
                 </TestContext.Provider>
