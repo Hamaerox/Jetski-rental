@@ -19,7 +19,7 @@ class App extends Component{
             textAlign: 'center'
         }
         const contentStyle = {
-            width: '10%',
+            width: '200px',
             height: '100%',
             margin: '2px',
             padding: '2px',

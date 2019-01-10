@@ -16,9 +16,17 @@ class BookingsProvider extends Component{
             this.setState({
                 reservations: res.data
             })
-            console.log(res.data)
         })
         .catch(err => console.log(err))
+    }
+    deleteBookings = (id) => {
+        axios.delete(`/bookings/${id}`).then(res => {
+            this.setState(prevState => {
+                return{
+                    reservations: prevState.reservations.filter(reservation => reservation._id !== id)
+                }
+            })
+        })
     }
 
     render(){
@@ -26,7 +34,8 @@ class BookingsProvider extends Component{
                 <Provider 
                 value={{
                     reservations: this.state.reservations,
-                    getBookings: this.getBookings
+                    getBookings: this.getBookings,
+                    deleteBookings: this.deleteBookings
                 }}>
                     {this.props.children}
                 </Provider>

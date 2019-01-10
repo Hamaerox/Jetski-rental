@@ -20,13 +20,7 @@ class Bookings extends Component {
     }
 
     handleDelete = (id) => {
-        Axios.delete(`/bookings/${id}`).then(res => {
-            this.setState(prevState => {
-                return{
-                    reservations: prevState.reservations.filter(reservation => reservation._id !== id)
-                }
-            })
-        })
+       this.props.deleteBookings(id)
     }
 
     render(){
@@ -46,7 +40,7 @@ class Bookings extends Component {
                             <br></br>
                             {`Email: ${item.email}`}
                             <br></br>
-                            <button onClick={this.handleDelete}>Delete</button>
+                            <button onClick={ () => this.handleDelete(item._id)}>Delete</button>
                         </div>
                     )}
                 </div>

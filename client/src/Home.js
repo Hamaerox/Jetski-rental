@@ -36,6 +36,7 @@ class Home extends Component {
         return(
             <div>
                 <div className='bookingContainer'>
+                <h1>Book your adventure below!</h1>
                     <form className='bookingForm' onSubmit={this.handleSubmit}>
                     <h4>What Date would you like to book?</h4>
                         <input 
@@ -82,7 +83,7 @@ class Home extends Component {
                             value={this.state.phone}
                             onChange={this.handleChange}
                             required/>
-                            <h4 className='formText'>Please verify above info is correct</h4>
+                            <h4 className='formText'>Please verify above info is correct before submitting</h4>
                         <button className='bookingInput'>Submit</button>
                     </form>
                 </div>
