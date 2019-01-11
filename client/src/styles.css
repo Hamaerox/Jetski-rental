@@ -45,16 +45,6 @@ html {
   transform: rotate(45deg) translate(-6px, -6px);
 }
 
-.popup-overlay {
-    /* width: 10%;
-    height: 100%; */
-    /* background-color: rgb(8, 47, 41) !important;
-    padding: 2px;
-    margin: 2px;
-    border-radius: 5px;
-    animation: fade 2s; */
-}
-
 @keyframes fade {
     0% {opacity: 0;}
     100% {opacity: 0.9;}
