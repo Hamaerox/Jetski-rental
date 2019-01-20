@@ -19,7 +19,7 @@ app.use("/auth", require("./routes/auth"));
 
 
 
-mongoose.connect('mongodb://localhost:27017/version2', {useNewUrlParser: true}, () => {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/version2', {useNewUrlParser: true}, () => {
     console.log('connect to the db captain!')    // name of database is version2
 })
 
