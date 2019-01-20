@@ -1,0 +1,29 @@
+{
+  "name": "Jetski-rental",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.2",
+    "morgan": "^1.9.1",
+    "reactjs-popup": "^1.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hamaerox/Jetski-rental.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hamaerox/Jetski-rental/issues"
+  },
+  "homepage": "https://github.com/Hamaerox/Jetski-rental#readme"
+}
