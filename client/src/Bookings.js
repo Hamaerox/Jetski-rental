@@ -3,7 +3,6 @@ import {withReservations} from './BookingsProvider'
 import moment from 'moment'
 import './styles.css'
 import {withAdmin} from './AdminProvider'
-import Axios from 'axios';
 
 
 
