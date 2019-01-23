@@ -3,7 +3,6 @@ const Admin = require("../models/admin");
 const authRouter = express.Router();
 const jwt = require("jsonwebtoken");
 
-//post a new user(admin) to user collection (signing up)
 authRouter.post("/signup", (req, res, next) => {
     
     Admin.findOne({username: req.body.username}, (err, existingAdmin) => {
@@ -37,7 +36,6 @@ authRouter.post("/signup", (req, res, next) => {
 
 
 authRouter.post("/login", (req, res, next) => {
-    // Try to find the user with the submitted username 
     Admin.findOne({username: req.body.username}, (err, admin) => {
         if (err) {
         res.status(500)
