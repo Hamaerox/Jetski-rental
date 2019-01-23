@@ -15,7 +15,6 @@ const adminSchema = new Schema({
     }
 
 })
-    // Encrypts password on Signup
 
 adminSchema.pre("save", function(next) {
     const user = this
