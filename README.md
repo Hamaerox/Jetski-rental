@@ -1,1 +1,1 @@
-# collaborative-website
+This project was deisgned in React and JSX(Javascript and HTML) while the server runs on Express and the database on MongoDB. This project was co-worked on and contains a secure user authentication using JWT. Only the User Authentication was done by the other developer working with me. Everything else was done by myself. 
